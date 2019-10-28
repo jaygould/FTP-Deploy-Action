@@ -15,9 +15,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: jaygould/FTP-Deploy-Action@2.0.0
       env:
-        FTP_SERVER: ftp.samkirkland.com
+        FTP_SERVER: ftp.jaygould.com
         FTP_USERNAME: myFtpUserName
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         ARGS: --delete
@@ -38,8 +38,8 @@ I recommend you store your FTP_PASSWORD as a secret.
 
 | Key Name       | Required? | Example                    | Default         | Description                                              |
 |----------------|-----------|----------------------------|-----------------|----------------------------------------------------------|
-| `FTP_SERVER`   | Yes       | ftp.samkirkland.com        | N/A             | FTP server name (you may need to specify a port)         |
-| `FTP_USERNAME` | Yes       | git-action@samkirkland.com | N/A             | FTP account username                                     |
+| `FTP_SERVER`   | Yes       | ftp.jaygould.com        | N/A             | FTP server name (you may need to specify a port)         |
+| `FTP_USERNAME` | Yes       | git-action@jaygould.com | N/A             | FTP account username                                     |
 | `FTP_PASSWORD` | Yes       | CrazyUniquePassword&%123   | N/A             | FTP account password                                     |
 | `METHOD`       | No        | ftp                        | ftp             | Protocol used to deploy (ftp or sftp)                    |
 | `PORT`         | No        | 21                         | ftp=21, sftp=22 | The port used to connect to server                       |
@@ -96,9 +96,9 @@ jobs:
       run: ls
       
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: jaygould/FTP-Deploy-Action@2.0.0
       env:
-        FTP_SERVER: ftp.samkirkland.com
+        FTP_SERVER: ftp.jaygould.com
         FTP_USERNAME: myFTPUsername
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         LOCAL_DIR: build
@@ -118,9 +118,9 @@ jobs:
     - uses: actions/checkout@master
     
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: jaygould/FTP-Deploy-Action@2.0.0
       env:
-        FTP_SERVER: ftp.samkirkland.com
+        FTP_SERVER: ftp.jaygould.com
         FTP_USERNAME: mySFTPUsername
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         METHOD: sftp
@@ -140,9 +140,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
+      uses: jaygould/FTP-Deploy-Action@2.0.0
       env:
-        FTP_SERVER: ftp.samkirkland.com
+        FTP_SERVER: ftp.jaygould.com
         FTP_USERNAME: myFTPUsername
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         ARGS: --delete --dry-run
@@ -163,7 +163,7 @@ jobs:
 #### Deprecated main.workflow config (used for beta/legacy apps that haven't been migrated to .yaml workflows yet)
 ```workflow
 action "FTP-Deploy-Action" {
-   uses = "SamKirkland/FTP-Deploy-Action@1.0.0"
+   uses = "jaygould/FTP-Deploy-Action@1.0.0"
    secrets = ["FTP_USERNAME", "FTP_PASSWORD", "FTP_SERVER"]
 }
 ```
