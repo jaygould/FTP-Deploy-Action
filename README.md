@@ -158,31 +158,3 @@ jobs:
    * Note: If you've already published these files you will need to manually delete them on the server or add the `--delete-excluded` option to ARGS
    * Note: This will exclude all folders and files that start with `.git` no matter the folder they're in
 
-#### Deprecated main.workflow config (used for beta/legacy apps that haven't been migrated to .yaml workflows yet)
-```workflow
-action "FTP-Deploy-Action" {
-   uses = "jaygould/FTP-Deploy-Action@1.0.0"
-   secrets = ["FTP_USERNAME", "FTP_PASSWORD", "FTP_SERVER"]
-}
-```
-
-### Debugging locally
-##### Instructions for debugging on windows
-- Install docker for windows
-- Open powershell
-- Navigate to the repo folder
-- Run `docker build --tag action .`
-- (Optional) This step is only required when editing entrypoint.sh due to windows editors saving the file with windows line breaks instead of linux line breaks
-  - Download http://dos2unix.sourceforge.net/
-  - In another powershell window nagivate to the dos2unix folder /bin
-  - Run this command every time you modify entrypoint.sh `.\dos2unix.exe "{FULL_PATH_TO_REPO\entrypoint.sh}"`
-- Run `docker run action`
-  
-##### Instructions for debugging on linux
-- Please submit a PR for linux instructions :)
-
-
-#### ToDo
-- More examples
-
-#### Pull Requests Welcome!
