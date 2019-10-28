@@ -2,8 +2,6 @@
 
 Automate deploying websites and more with this GitHub action.
 
-![Action](images/action-preview.gif)
-
 ### Usage Example (Your_Project/.github/workflows/main.yml)
 ```yml
 on: push
